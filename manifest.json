@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Capturar mensagem do Discord (Cryzen)",
+    "version": "1.0",
+    "permissions": ["tabs", "activeTab", "scripting"],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "action": {
+        "default_popup": "estaticos/index.html",
+        "default_icon": {
+            "16": "./estaticos/candle.png",
+            "32": "./estaticos/candle.png",
+            "48": "./estaticos/candle.png",
+            "128": "./estaticos/candle.png"
+        }
+    },
+    "icons": {
+        "16": "./estaticos/candle.png",
+        "32": "./estaticos/candle.png",
+        "48": "./estaticos/candle.png",
+        "128": "./estaticos/candle.png"
+    },
+    "host_permissions": [
+        "https://cryzen.io/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://cryzen.io/play"],
+            "js": ["content-script.js"]
+        }
+    ]
+}
